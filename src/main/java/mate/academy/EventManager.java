@@ -5,8 +5,8 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
 
 public class EventManager {
-    LinkedBlockingQueue<EventListener> listeners = new LinkedBlockingQueue<>();
-    ExecutorService executorService = Executors.newCachedThreadPool();
+    private final LinkedBlockingQueue<EventListener> listeners = new LinkedBlockingQueue<>();
+    private final ExecutorService executorService = Executors.newCachedThreadPool();
 
     public void registerListener(EventListener listener) {
         listeners.offer(listener);
